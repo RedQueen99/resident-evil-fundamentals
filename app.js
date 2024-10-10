@@ -21,7 +21,7 @@ const questions = [
       { question: "What is Leon's iconic weapon?", options: ["Pistol", "Shotgun", "Grenade Launcher", "Rocket Launcher"], answer: "Pistol" }
     ]
   }
-  // Add more characters as needed...
+  
 ];
 
 let currentQuestionIndex = 0;
@@ -35,7 +35,7 @@ function loadQuestion() {
   const questionText = document.getElementById('question');
   const optionsContainer = document.getElementById('options');
 
-  // Error handling with try/catch if image fails to load
+  
   try {
     characterImage.src = currentCharacter.img;
   } catch (error) {
@@ -47,7 +47,7 @@ function loadQuestion() {
 
   optionsContainer.innerHTML = '';
 
-  // Use a `for` loop to dynamically create options
+  
   for (let i = 0; i < currentQuestion.options.length; i++) {
     const option = currentQuestion.options[i];
     const button = document.createElement('button');
@@ -64,7 +64,7 @@ function checkAnswer(selectedOption) {
   const currentQuestion = currentCharacter.questions[currentCharacterQuestionIndex];
   const nextButton = document.getElementById('next-button');
 
-  // Use switch statement to check the answer
+  
   switch (selectedOption) {
     case currentQuestion.answer:
       score++;
@@ -100,5 +100,5 @@ function nextQuestion() {
 
 document.getElementById('next-button').addEventListener('click', nextQuestion);
 
-// Initialize first question
+
 loadQuestion();
